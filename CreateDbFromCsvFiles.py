@@ -69,7 +69,7 @@ for file in numFiles:
     
     for i in range(len(headers)):
         if type_list[i] == 'varchar':
-            statement = (statement + '\n{} varchar({}),').format(headers[i].lower(), str(longest[i]))
+            statement = (statement + '\n{} varchar({}),').format(headers[i].lower(), str(max(1,longest[i])))
         else:
             statement = (statement + '\n' + '{} {}' + ',').format(headers[i].lower(), type_list[i])
     
